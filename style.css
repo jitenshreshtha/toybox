@@ -240,7 +240,6 @@ ol[type="I"] li::before {
 /* Responsive Design */
 @media (max-width: 768px) {
     nav {
-        flex-direction: column;
         gap: 1rem;
     }
 
@@ -256,6 +255,16 @@ ol[type="I"] li::before {
 }
 
 @media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
     html {
         font-size: 14px;
     }
