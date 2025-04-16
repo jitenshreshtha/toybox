@@ -1,0 +1,164 @@
+/* SEO-optimized CSS with mobile-first approach */
+:root {
+    --primary-color: #2A5C82;
+    --secondary-color: #FF6B6B;
+    --accent-color: #FFD93D;
+    --text-color: #333;
+    --light-bg: #f9f9f9;
+    --max-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-color);
+    background: #fff;
+}
+
+/* Header SEO Styling */
+header {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* Breadcrumb Navigation SEO */
+.breadcrumb {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    background: var(--light-bg);
+    max-width: var(--max-width);
+    margin: 1rem auto 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-right: 0.3rem;
+}
+
+.breadcrumb span {
+    color: #666;
+    font-weight: 500;
+}
+.breadcrumb a::after {
+    content: '›';
+    margin-left: 0.5rem;
+    color: #999;
+}
+
+/* Main Content SEO */
+main {
+    max-width: var(--max-width);
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin: 1.5rem 0;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin: 1.2rem 0;
+}
+
+/* Product Schema Styling */
+.product-schema {
+    display: none;
+}
+
+/* Image Optimization */
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.lazy-load {
+    background: #f5f5f5;
+    min-height: 200px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .breadcrumb {
+        font-size: 0.8rem;
+    }
+}
