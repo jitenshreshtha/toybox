@@ -45,8 +45,22 @@ nav {
 
 nav ul {
     display: flex;
-    gap: 2rem;
-    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    gap: 1.2rem;
+}
+
+nav ul li {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+nav ul li::before {
+    content: none !important;
+}
+
+nav ul li:hover {
+    transform: none;
 }
 
 nav a {
@@ -54,6 +68,9 @@ nav a {
     color: var(--text-color);
     font-weight: 600;
     transition: color 0.3s;
+}
+nav a img {
+    box-shadow: none !important;
 }
 
 nav a:hover {
@@ -96,7 +113,19 @@ main {
     margin: 2rem auto;
     padding: 0 1rem;
 }
+main a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid var(--accent-color);
+    transition: all 0.3s ease;
+    padding-bottom: 2px;
+}
 
+main a:visited {
+    color: #6b48c8;
+    border-bottom-color: #6b48c8;
+}
 h1 {
     font-size: 2.5rem;
     color: var(--primary-color);
@@ -116,12 +145,12 @@ h3 {
     margin: 1.2rem 0;
 }
 
-/* Product Schema Styling */
+
 .product-schema {
     display: none;
 }
 
-/* Image Optimization */
+
 img {
     width: 100%;
     height: auto;
@@ -133,6 +162,79 @@ img {
 .lazy-load {
     background: #f5f5f5;
     min-height: 200px;
+}
+ul, ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+    line-height: 1.7;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.7rem;
+}
+
+ul li::before {
+    content: "■";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-size: 0.8em;
+    top: 0.15em;
+}
+
+ol {
+    counter-reset: list-counter;
+    list-style: none;
+}
+
+ol li {
+    counter-increment: list-counter;
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 0.7rem;
+}
+
+ol li::before {
+    content: counter(list-counter) ".";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    min-width: 1.5rem;
+}
+
+/* Nested lists */
+ul ul, ol ol,
+ul ol, ol ul {
+    margin: 0.5rem 0 0.5rem 1.5rem;
+}
+
+ul ul li::before {
+    content: "▹";
+    color: var(--secondary-color);
+}
+
+/* List in benefits sections */
+.benefits ul li::before {
+    content: "✓";
+    color: #2ecc71;
+}
+
+/* Hover effects */
+li:hover {
+    transform: translateX(5px);
+    transition: transform 0.2s ease;
+}
+
+/* Special case for Roman numerals */
+ol[type="I"] li::before {
+    content: counter(list-counter, upper-roman) ".";
 }
 
 /* Responsive Design */
